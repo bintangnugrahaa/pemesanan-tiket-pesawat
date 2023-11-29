@@ -20,7 +20,7 @@ include('template/navigasi.php');
 		$umurpnp=$_POST['umur'];
 		$jekelamin=$_POST['jenis_kelamin'];
 		$tlahir=$_POST['tmp_lahir'];
-		$tgllahir=$_POST['thn']."-".$_POST['bln']."-".$_POST['tgl'];
+		$tgllahir = date('d-m-Y', strtotime($_POST['thn'] . '-' . $_POST['bln'] . '-' . $_POST['tgl']));
 
 
 		if($_FILES["foto"]["name"]!=''){
@@ -31,7 +31,7 @@ include('template/navigasi.php');
 			else
 				{$pesan='.Foto asli gagal di upload';}	
 		}
-		$update = mysqli_query ($conn,"UPDATE  tbl_konsumen SET nama_konsumen='$nmpnp',almt_komsumen='$alamat',telepon='$nohp',umur='$umurpnp',jenis_kelamin='$jekelamin',tmp_lahir='$tlahir',tanggal='$tgllahir',foto='".$_FILES["foto"]["name"]."' where no_identitas='$idpnp' ") or die (mysqli_error());
+		$update = mysqli_query ($conn,"UPDATE tbl_konsumen SET nama_konsumen='$nmpnp',almt_komsumen='$alamat',telepon='$nohp',umur='$umurpnp',jenis_kelamin='$jekelamin',tmp_lahir='$tlahir',tanggal='$tgllahir',foto='".$_FILES["foto"]["name"]."' where no_identitas='$idpnp' ") or die (mysqli_error());
 
 //jika query update sukses
 		if($update){

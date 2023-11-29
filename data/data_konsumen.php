@@ -22,7 +22,7 @@
 		$alamat=$data['almt_komsumen'];
 		$nohp=$data['telepon'];
 		$tmpt=$data['tmp_lahir'];
-		$tgl=date('Y-m-d', strtotime($data['tgl_lahir']));
+		$tgl=date('d-m-Y', strtotime($data['tanggal']));
 		$umur=$data['umur'];
 		$foto=$data['foto'];
 

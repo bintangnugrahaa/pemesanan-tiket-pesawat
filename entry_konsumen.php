@@ -46,9 +46,9 @@ $hasil=mysqli_query($conn,$sql) or die(mysqli_error());
 					?>
 				</select>
 				<?php error_reporting(1); ?>
-				<select name="thn" id="tahun" onchange="document.getElementById('dat').value=2016-this.options[this.selectedIndex].text">
+				<select name="thn" id="tahun" onchange="document.getElementById('dat').value=2024-this.options[this.selectedIndex].text">
 				<option>-Pilih Tahun-<?php echo $_POST['tahun']?>
-						<?php for($t=1990;$t<2016;$t++){?> <option><?php echo $t ?></option> 
+						<?php for($t=1900;$t<2024;$t++){?> <option><?php echo $t ?></option> 
 						<?php };?>
 					</select>
 					<input type="text" name="umur" id="dat" style="width: 40px;" placeholder="Umur"> 
